@@ -1,0 +1,67 @@
+/* Style de base */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px; /* Largeur augmentée */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Zone d'affichage */
+#resultat {
+  font-size: 32px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #eee;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  text-align: right;
+  color: #333;
+  width: 100%; /* Prendre toute la largeur */
+}
+
+/* Conteneur des boutons */
+#btndiv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Style des boutons */
+.bouton {
+  padding: 20px;
+  font-size: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Boutons à largeur complète */
+}
+
+.bouton:hover {
+  background-color: #0056b3;
+}
+
+.bouton:active {
+  background-color: #004085;
+  transform: scale(0.98);
+}
