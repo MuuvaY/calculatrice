@@ -1,67 +1,76 @@
-/* Style de base */
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  background-color: #f7f7f7;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 main {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 400px; /* Largeur augmentée */
 }
 
 h1 {
+  color: #333;
   font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-/* Zone d'affichage */
-#resultat {
-  font-size: 32px;
-  padding: 10px;
   margin-bottom: 20px;
-  background-color: #eee;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  text-align: right;
-  color: #333;
-  width: 100%; /* Prendre toute la largeur */
 }
 
-/* Conteneur des boutons */
-#btndiv {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-/* Style des boutons */
-.bouton {
+#calculatrice {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  font-size: 20px;
-  background-color: #007bff;
-  color: white;
+  width: 320px;
+}
+
+.resultat {
+  height: 50px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #333;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: right;
+  background-color: #f1f1f1;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bouton,
+.operator {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  font-size: 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-color: #007aff; /* Couleur de bouton bleue */
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%; /* Boutons à largeur complète */
+  transition: background-color 0.2s, transform 0.1s;
 }
 
-.bouton:hover {
-  background-color: #0056b3;
+.bouton:hover,
+.operator:hover {
+  background-color: #0051a8; /* Couleur plus foncée au survol */
 }
 
-.bouton:active {
-  background-color: #004085;
-  transform: scale(0.98);
+.operator {
+  background-color: #ff3b30; /* Couleur rouge pour les opérations */
+}
+
+.operator:hover {
+  background-color: #e60000; /* Couleur rouge foncé au survol */
+}
+
+.bouton:active,
+.operator:active {
+  transform: scale(0.95); /* Effet d'appui */
 }
