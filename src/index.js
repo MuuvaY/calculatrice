@@ -29,12 +29,23 @@ division.className = "operator";
 
 operator.append(addition, soustraction, multiplication, division);
 
-const text = document.getElementById("calculatrice");
+const calculatrice = document.getElementById("calculatrice");
 
-text.addEventListener("click", calculate);
+calculatrice.addEventListener("click", calculate);
 
 function calculate(event) {
-  const btnclicker = event.target.textContent;
+  let btnclicker = event.target.textContent;
+  let btnclicker2 = event.target.textContent;
 
-  console.log(btnclicker);
+  // console.log(btnclicker);
+
+  const resultat = btnclicker + btnclicker;
+
+  const test = `${btnclicker} ${soustraction} ${btnclicker2}`;
+
+  console.log(test);
+
+  // console.log(resultat);
+
+  // console.log(btnclicker);
 }
