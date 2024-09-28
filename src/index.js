@@ -1,4 +1,4 @@
-for (let boutons = 1; boutons < 10; boutons++) {
+for (let boutons = 0; boutons < 10; boutons++) {
   // console.log(boutons);
   const btndiv = document.getElementById("btndiv");
   const bouton = document.createElement("button");
@@ -90,4 +90,17 @@ function resultat() {
   displayValue.append(res);
   // document.getElementById(".displayValue").innerHTML = res;
   displayValue.innerHTML = res;
+}
+
+const clearbtn = document.getElementById("btnclear");
+const allClear = document.createElement("button");
+allClear.textContent = "AC";
+allClear.className = "clear";
+
+clearbtn.append(allClear);
+
+allClear.addEventListener("click", test);
+
+function test() {
+  displayValue.innerHTML = "";
 }

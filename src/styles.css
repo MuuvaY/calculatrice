@@ -1,3 +1,4 @@
+/* Corps de la page */
 body {
   display: flex;
   justify-content: center;
@@ -25,9 +26,43 @@ h1 {
   width: 320px;
 }
 
-.resultat {
-  height: 50px;
+/* Conteneur pour le bouton AC et l'affichage des résultats */
+#displlayContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+/* Style du bouton AC en noir */
+#btnclear {
+  width: 70px;
+}
+
+#btnclear button {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  background-color: #333333; /* Couleur noire pour le bouton AC */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#btnclear button:hover {
+  background-color: #000000; /* Couleur noire plus foncée au survol */
+}
+
+#btnclear button:active {
+  transform: scale(0.95); /* Effet d'appui */
+}
+
+/* Style de l'affichage du résultat */
+#displayValue {
+  flex-grow: 1;
+  height: 50px;
   font-size: 32px;
   color: #333;
   border: 1px solid #dcdcdc;
@@ -35,6 +70,7 @@ h1 {
   padding: 10px;
   text-align: right;
   background-color: #f1f1f1;
+  margin-left: 10px; /* Espace entre AC et le display */
 }
 
 .button-container {
@@ -74,6 +110,7 @@ h1 {
 .operator:active {
   transform: scale(0.95); /* Effet d'appui */
 }
+
 .btnres {
   width: 70px;
   height: 70px;
@@ -81,14 +118,16 @@ h1 {
   font-size: 24px;
   border: none;
   border-radius: 10px;
-  background-color: #28a745; /* Couleur de bouton bleue */
+  background-color: #28a745; /* Couleur verte pour le bouton = */
   color: white;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.1s;
 }
+
 .btnres:hover {
   background-color: #218838; /* Couleur plus foncée au survol */
 }
+
 .btnres:active {
-  transform: scale(0.95); /* Effet d'appui pour les opérateurs */
+  transform: scale(0.95); /* Effet d'appui pour le bouton = */
 }
