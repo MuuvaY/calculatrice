@@ -74,3 +74,21 @@ h1 {
 .operator:active {
   transform: scale(0.95); /* Effet d'appui */
 }
+.btnres {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+  background-color: #28a745; /* Couleur de bouton bleue */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+.btnres:hover {
+  background-color: #218838; /* Couleur plus foncée au survol */
+}
+.btnres:active {
+  transform: scale(0.95); /* Effet d'appui pour les opérateurs */
+}

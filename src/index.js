@@ -8,7 +8,7 @@ for (let boutons = 1; boutons < 10; boutons++) {
 
   btndiv.append(bouton);
 }
-const operator = document.getElementById("btnoperator");
+const operatorAll = document.getElementById("btnoperator");
 
 const addition = document.createElement("button");
 const soustraction = document.createElement("button");
@@ -27,45 +27,67 @@ multiplication.className = "operator";
 division.textContent = "/";
 division.className = "operator";
 
-operator.append(addition, soustraction, multiplication, division);
+operatorAll.append(addition, soustraction, multiplication, division);
 
-const operatorclick = document.getElementById("btnoperator");
-
-// const calculatrice = document.getElementById("btndiv");
 const calculatrice = document.querySelectorAll(".bouton");
-
 calculatrice.forEach((element) => {
   element.addEventListener("click", calculate);
   console.log(element);
 });
 
+const operatorclick = document.getElementById("btnoperator");
+
 let num1 = 0;
 let num2 = 0;
-let operator2 = "";
+let operator = "";
 let res;
+
+const displayValue = document.getElementById("displayValue");
 
 operatorclick.addEventListener("click", operatorclicky);
 
 function operatorclicky(evt) {
-  operator2 = evt.target.textContent;
+  operator = evt.target.textContent;
+  displayValue.append(operator);
 }
 
 function calculate(event) {
-  if (operator2 === "") {
+  let displayValue = document.getElementById("displayValue");
+
+  if (operator === "") {
     num1 = event.target.textContent;
+    displayValue.append(num1);
   }
-  if (operator2 !== "") {
+  if (operator !== "") {
     num2 = event.target.textContent;
+    displayValue.append(num2);
   }
-  console.log("num1 :", num1, "operator2 :", operator2, "num2:", num2);
-  if (operator2 === "+") {
+
+  console.log(displayValue);
+  console.log("num1 :", num1, "operator2 :", operator, "num2:", num2);
+  if (operator === "+") {
     res = parseFloat(num1) + +parseFloat(num2);
-  } else if (operator2 === "-") {
+  } else if (operator === "-") {
     res = parseFloat(num1) - parseFloat(num2);
-  } else if (operator2 === "x") {
+  } else if (operator === "x") {
     res = parseFloat(num1) * parseFloat(num2);
-  } else if (operator2 === "/") {
+  } else if (operator === "/") {
     res = parseFloat(num1) / parseFloat(num2);
   }
-  console.log("Résultat :", res);
+}
+
+const btnresultat = document.getElementById("btnresultat");
+const btnres = document.createElement("button");
+btnres.textContent = "=";
+btnres.className = "btnres";
+
+btnresultat.appendChild(btnres);
+
+btnres.addEventListener("click", resultat);
+
+function resultat() {
+  console.log(res);
+  displayValue.append(res);
+  // document.getElementById(".displayValue").innerHTML = res;
+  displayValue.innerHTML = res;
 }
