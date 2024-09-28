@@ -42,12 +42,8 @@ calculatrice.forEach((element) => {
 let num1 = 0;
 let num2 = 0;
 let operator2 = "";
+let res;
 
-// num1 = parseFloat(num1.value);
-
-// num2 = parseFloat(num2.value);
-
-// console.log("Nombre 1 :", num1, "Nombre 2 :", num2);
 operatorclick.addEventListener("click", operatorclicky);
 
 function operatorclicky(evt) {
@@ -55,12 +51,21 @@ function operatorclicky(evt) {
 }
 
 function calculate(event) {
-  if (operator2 === "" || null) {
+  if (operator2 === "") {
     num1 = event.target.textContent;
   }
-  if (operator2 != null) {
+  if (operator2 !== "") {
     num2 = event.target.textContent;
   }
-
   console.log("num1 :", num1, "operator2 :", operator2, "num2:", num2);
+  if (operator2 === "+") {
+    res = parseFloat(num1) + +parseFloat(num2);
+  } else if (operator2 === "-") {
+    res = parseFloat(num1) - parseFloat(num2);
+  } else if (operator2 === "x") {
+    res = parseFloat(num1) * parseFloat(num2);
+  } else if (operator2 === "/") {
+    res = parseFloat(num1) / parseFloat(num2);
+  }
+  console.log("Résultat :", res);
 }
