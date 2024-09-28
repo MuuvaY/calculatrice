@@ -29,23 +29,38 @@ division.className = "operator";
 
 operator.append(addition, soustraction, multiplication, division);
 
-const calculatrice = document.getElementById("calculatrice");
+const operatorclick = document.getElementById("btnoperator");
 
-calculatrice.addEventListener("click", calculate);
+// const calculatrice = document.getElementById("btndiv");
+const calculatrice = document.querySelectorAll(".bouton");
+
+calculatrice.forEach((element) => {
+  element.addEventListener("click", calculate);
+  console.log(element);
+});
+
+let num1 = 0;
+let num2 = 0;
+let operator2 = "";
+
+// num1 = parseFloat(num1.value);
+
+// num2 = parseFloat(num2.value);
+
+// console.log("Nombre 1 :", num1, "Nombre 2 :", num2);
+operatorclick.addEventListener("click", operatorclicky);
+
+function operatorclicky(evt) {
+  operator2 = evt.target.textContent;
+}
 
 function calculate(event) {
-  let btnclicker = event.target.textContent;
-  let btnclicker2 = event.target.textContent;
+  if (operator2 === "" || null) {
+    num1 = event.target.textContent;
+  }
+  if (operator2 != null) {
+    num2 = event.target.textContent;
+  }
 
-  // console.log(btnclicker);
-
-  const resultat = btnclicker + btnclicker;
-
-  const test = `${btnclicker} ${soustraction} ${btnclicker2}`;
-
-  console.log(test);
-
-  // console.log(resultat);
-
-  // console.log(btnclicker);
+  console.log("num1 :", num1, "operator2 :", operator2, "num2:", num2);
 }
